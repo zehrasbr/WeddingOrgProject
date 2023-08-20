@@ -8,5 +8,6 @@ namespace WeddingOrganization.PresantationLayer.Controllers
 		{
 			return View();
 		}
+
 	}
 }
