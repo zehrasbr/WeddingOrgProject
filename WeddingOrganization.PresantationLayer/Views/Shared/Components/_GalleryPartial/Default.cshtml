@@ -1,34 +1,22 @@
-﻿<div class="show-events-carousel">
+﻿
+@using EntityLayer.Concrete
+@model List<Gallery>
+
+<div class="show-events-carousel">
     <div class="container">
         <div class="row">
+
             <div class="col-lg-12">
+
                 <div class="owl-show-events owl-carousel">
-                    <div class="item">
-                        <a href="event-details.html"><img src="~/web/assets/images/show-events-01.jpg" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href="event-details.html"><img src="~/web/assets/images/show-events-02.jpg" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href="event-details.html"><img src="~/web/assets/images/show-events-03.jpg" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href="event-details.html"><img src="~/web/assets/images/show-events-04.jpg" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href="event-details.html"><img src="~/web/assets/images/show-events-01.jpg" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href="event-details.html"><img src="~/web/assets/images/show-events-02.jpg" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href="event-details.html"><img src="~/web/assets/images/show-events-03.jpg" alt=""></a>
-                    </div>
-                    <div class="item">
-                        <a href="event-details.html"><img src="~/web/assets/images/show-events-04.jpg" alt=""></a>
+                    @foreach (var item in Model)
+                    {
+                        <div class="item">
+                            <a href="event-details.html"><img src="@item.ImageUrl" alt=""></a>
+                        </div>}
                     </div>
                 </div>
-            </div>
+            
         </div>
     </div>
-</div>
+</div> 
