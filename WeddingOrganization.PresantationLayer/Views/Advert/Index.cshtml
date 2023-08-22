@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -12,8 +11,9 @@
 
     @await Component.InvokeAsync("_PreloaderPartial")
     @await Component.InvokeAsync("_HeaderPartial")
-    @await Component.InvokeAsync("_PlacesHeading")
-    @await Component.InvokeAsync("_PlacesDetail")
+    @await Component.InvokeAsync("_ContainerPartial")  
+    @await Component.InvokeAsync("_GalleryPartial")
+    @await Component.InvokeAsync("_AdvertHeading")
     @await Component.InvokeAsync("_FooterPartial")
 
 </body>

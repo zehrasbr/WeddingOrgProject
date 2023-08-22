@@ -1,340 +1,337 @@
-﻿ @using EntityLayer.Concrete
- @model List<PlacesDetail>
- <div class="shows-events-tabs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row" id="tabs">
-                        <div class="col-lg-12">
-                            <div class="heading-tabs">
+﻿@using EntityLayer.Concrete
+@model List<PlacesDetail>
+<div class="shows-events-tabs">
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-12">
+                   <div class="row" id="tabs">
+                       <div class="col-lg-12">
+                           <div class="heading-tabs">
+                               <div class="row">
+                                   <div class="col-lg-8">
+                                       <ul>
+                                         <li><a href='#tabs-1'>Mekanlar</a></li>
+                                         <li><a href='#tabs-2'>After Party</a></a></li>
+                                       </ul>
+                                   </div>
+                                   <div class="col-lg-4">
+                                         <div class="main-dark-button">
+                                         </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-lg-12">
+                           <section class='tabs-content'>
+                               <article id='tabs-1'>
+                                   <div class="row">
+                                       <div class="col-lg-12">
+                                           <div class="heading"><h2>Gösteriler</h2></div>
+                                       </div>
+                                       <div class="col-lg-3">
+                                           <div class="sidebar">
+                                               <div class="row">
+                                                   <div class="col-lg-12">
+                                                       <div class="heading-sidebar">
+                                                           <h4>Yaklaşan Etkinlikler ve Mekanlar</h4>
+                                                       </div>
+                                                   </div>
+                                                   <div class="col-lg-12">
+                                                       <div class="month">
+                                                           <h6>Aylar</h6>
+                                                           <ul>
+                                                               <li><a href="#">Haziran</a></li>
+                                                               <li><a href="#">Temmuz</a></li>
+                                                               <li><a href="#">Ağustos</a></li>
+                                                           </ul>
+                                                       </div>
+                                                   </div>
+                                                   <div class="col-lg-12">
+                                                       <div class="category">
+                                                           <h6>Kategoriler</h6>
+                                                           <ul>
+                                                               <li><a href="#">Düğün Mekanları</a></li>
+                                                               <li><a href="#">After Party</a></li>
+                                                               <li><a href="#">Organizasyonlar</a></li>
+                                                           </ul>
+                                                       </div>
+                                                   </div>
+                                                   <div class="col-lg-12">
+                                                       <div class="venues">
+                                                           <h6>Mekanlar</h6>
+                                                           <ul>
+                                                               <li><a href="#">Radio City Musical Salonu</a></li>
+                                                               <li><a href="#">Madison Square Bahçesi</a></li>
+                                                               <li><a href="#">Royce Salonu</a></li>
+                                                           </ul>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="col-lg-9">
+                                           <div class="row">
+                                                @foreach (var item in Model)
+                                                {
+                                                    <div class="col-lg-12">
+                                                       <div class="event-item">
+                                                           <div class="row">
+                                                               <div class="col-lg-4">
+                                                                   <div class="left-content">
+                                                                       <h4>@item.Title</h4>
+                                                                       <p>@item.Description</p>
+                                                                   </div>
+                                                               </div>
+                                                               <div class="col-lg-4">
+                                                                   <div class="thumb">
+                                                                       <img src="@item.ImageUrl" alt="">
+                                                                   </div>
+                                                               </div>
+                                                               <div class="col-lg-4">
+                                                                   <div class="right-content">
+                                                                       <ul>
+                                                                           <li>
+                                                                               <i class="fa fa-clock-o"></i>
+                                                                               <h6>@item.DateTime</h6>
+                                                                           </li>
+                                                                           <li>
+                                                                               <i class="fa fa-map-marker"></i>
+                                                                               <span>@item.Address</span>
+                                                                           </li>
+                                                                           <li>
+                                                                               <i class="fa fa-users"></i>
+                                                                               <span>@item.Capacity Kişilik</span>
+                                                                           </li>
+                                                                       </ul>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                }
+                                               <div class="col-lg-12">
+                                                   <div class="pagination">
+                                                       <ul>
+                                                           <li><a href="#">Önceki</a></li>
+                                                        <li class ="active"><a href="Active">1</a></li>
+                                                           <li><a href="#">2</a></li>
+                                                           <li><a href="#">3</a></li>
+                                                           <li><a href="#">Sonraki</a></li>
+                                                       </ul>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </article>
+                            <article id='tabs-2'>
                                 <div class="row">
-                                    <div class="col-lg-8">
-                                        <ul>
-                                          <li><a href='#tabs-1'>Mekanlar</a></li>
-                                          <li><a href='#tabs-2'>After Party</a></a></li>
-                                        </ul>
+                                    <div class="col-lg-12">
+                                        <div class="heading"><h2>Gösteriler</h2></div>
                                     </div>
-                                    <div class="col-lg-4">
-                                          <div class="main-dark-button">
-                                          </div>
+                                    <div class="col-lg-3">
+                                        <div class="sidebar">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="heading-sidebar">
+                                                        <h4>Yaklaşan Etkinlikler ve Mekanlar</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="month">
+                                                        <h6>Aylar</h6>
+                                                        <ul>
+                                                            <li><a href="#">Haziran</a></li>
+                                                            <li><a href="#">Temmuza</a></li>
+                                                            <li><a href="#">Ağustos</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="category">
+                                                        <h6>Kategoriler</h6>
+                                                        <ul>
+                                                            <li><a href="#">Düğün Mekanları</a></li>
+                                                            <li><a href="#">After Party</a></li>
+                                                            <li><a href="#">Organizasyonlar</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="venues">
+                                                        <h6>Mekanlar</h6>
+                                                        <ul>
+                                                            <li><a href="#">Radio City Musical Salonu</a></li>
+                                                            <li><a href="#">Madison Square Bahçesi</a></li>
+                                                            <li><a href="#">Royce Salonu</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="event-item">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="left-content">
+                                                                <h4>Başlık</h4>
+                                                                <p>Servis ve hizmet elemanı, pasta, işık ve ses ekipmanları, barkovizyon, balayı, süsleme, mekan giydirme, lcv hizmeti, nikah şekeri, fotoğraf ve video, araç kiralama, dj, davetiye, dekor, masa / sandalye temini, kapalı çadır, kına gecesi, çiçek, havai fişek, sanatçı hizmetlerini vermektedir.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="thumb">
+                                                                <img src="~/web/assets/images/foto31.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="right-content">
+                                                                <ul>
+                                                                    <li>
+                                                                        <i class="fa fa-clock-o"></i>
+                                                                        <h6>Nisan 24 Cuma<br>12:00 - 22:00 </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fa fa-map-marker"></i>
+                                                                        <span>Copacabana Beach, Rio de Janeiro</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fa fa-users"></i>
+                                                                        <span>200 Kişilik</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="event-item">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="left-content">
+                                                                <h4>Sunny Hill Festival</h4>
+                                                                <p>Servis ve hizmet elemanı, pasta, işık ve ses ekipmanları, barkovizyon, balayı, süsleme, mekan giydirme, lcv hizmeti, nikah şekeri, fotoğraf ve video, araç kiralama, dj, davetiye, dekor, masa / sandalye temini, kapalı çadır, kına gecesi, çiçek, havai fişek, sanatçı hizmetlerini vermektedir.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="thumb">
+                                                                <img src="~/web/assets/images/foto32.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="right-content">
+                                                                <ul>
+                                                                    <li>
+                                                                        <i class="fa fa-clock-o"></i>
+                                                                        <h6>Mayıs 14 Perşembe<br>12:00 - 22:00 </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fa fa-map-marker"></i>
+                                                                        <span>Copacabana Beach, Rio de Janeiro</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fa fa-users"></i>
+                                                                        <span>100 Kişilik</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="event-item">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="left-content">
+                                                                <h4>New Rock Festival</h4>
+                                                                <p>Servis ve hizmet elemanı, pasta, işık ve ses ekipmanları, barkovizyon, balayı, süsleme, mekan giydirme, lcv hizmeti, nikah şekeri, fotoğraf ve video, araç kiralama, dj, davetiye, dekor, masa / sandalye temini, kapalı çadır, kına gecesi, çiçek, havai fişek, sanatçı hizmetlerini vermektedir.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="thumb">
+                                                                <img src="~/web/assets/images/foto33.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="right-content">
+                                                                <ul>
+                                                                    <li>
+                                                                        <i class="fa fa-clock-o"></i>
+                                                                        <h6>Haziran 14 Salı<br>12:00 - 22:00 </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fa fa-map-marker"></i>
+                                                                        <span>Copacabana Beach, Rio de Janeiro</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fa fa-users"></i>
+                                                                        <span>150 Kişilik</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="event-item">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="left-content">
+                                                                <h4>Monkey Dance Festival</h4>
+                                                                <p>Servis ve hizmet elemanı, pasta, işık ve ses ekipmanları, barkovizyon, balayı, süsleme, mekan giydirme, lcv hizmeti, nikah şekeri, fotoğraf ve video, araç kiralama, dj, davetiye, dekor, masa / sandalye temini, kapalı çadır, kına gecesi, çiçek, havai fişek, sanatçı hizmetlerini vermektedir.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="thumb">
+                                                                <img src="~/web/assets/images/foto34.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="right-content">
+                                                                <ul>
+                                                                    <li>
+                                                                        <i class="fa fa-clock-o"></i>
+                                                                        <h6>Temmuz 10 Pazar<br>12:00 - 22:00 </h6>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fa fa-map-marker"></i>
+                                                                        <span>Copacabana Beach, Rio de Janeiro</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <i class="fa fa-users"></i>
+                                                                        <span>300 Kişilik</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="pagination">
+                                                    <ul>
+                                                        <li><a href="#">Prev</a></li>
+                                                        <li class ="active">
+                                                            <a href="#">1</a></li>
+                                                        <li><a href="#">2</a></li>
+                                                        <li><a href="#">3</a></li>
+                                                        <li><a href="#">Next</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <section class='tabs-content'>
-                                <article id='tabs-1'>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="heading"><h2>Gösteriler</h2></div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="sidebar">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="heading-sidebar">
-                                                            <h4>Yaklaşan Etkinlikler ve Mekanlar</h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="month">
-                                                            <h6>Aylar</h6>
-                                                            <ul>
-                                                                <li><a href="#">Haziran</a></li>
-                                                                <li><a href="#">Temmuz</a></li>
-                                                                <li><a href="#">Ağustos</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="category">
-                                                            <h6>Kategoriler</h6>
-                                                            <ul>
-                                                                <li><a href="#">Düğün Mekanları</a></li>
-                                                                <li><a href="#">After Party</a></li>
-                                                                <li><a href="#">Organizasyonlar</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="venues">
-                                                            <h6>Mekanlar</h6>
-                                                            <ul>
-                                                                <li><a href="#">Radio City Musical Salonu</a></li>
-                                                                <li><a href="#">Madison Square Bahçesi</a></li>
-                                                                <li><a href="#">Royce Salonu</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <div class="row">
-                                            @foreach(var item in Model)
-                                            {
-                                                 <div class="col-lg-12">
-                                                    <div class="event-item">
-                                                        <div class="row">
-                                                            <div class="col-lg-4">
-                                                                <div class="left-content">
-                                                                    <h4>@item.Title</h4>
-                                                                    <p>@item.Description</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="thumb">
-                                                                    <img src="@item.ImageUrl" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="right-content">
-                                                                    <ul>
-                                                                        <li>
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                            <h6>@item.DateTime</h6>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="fa fa-map-marker"></i>
-                                                                            <span>@item.Address</span>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="fa fa-users"></i>
-                                                                            <span>@item.Capacity</span>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                            }
-                                                <div class="col-lg-12">
-                                                    <div class="pagination">
-                                                        <ul>
-                                                            <li><a href="#">Önceki</a></li>
-                                                            <li><a href="Active">1</a></li>
-                                                            <li class="#"><a href="#">2</a></li>
-                                                            <li><a href="#">3</a></li>
-                                                            <li><a href="#">Sonraki</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>                            
-                                <article id='tabs-2'>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="heading"><h2>After Party</h2></div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="sidebar">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="heading-sidebar">
-                                                            <h4>Sort The Upcoming Shows & Events By:</h4>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="month">
-                                                            <h6>Month</h6>
-                                                            <ul>
-                                                                <li><a href="#">July</a></li>
-                                                                <li><a href="#">August</a></li>
-                                                                <li><a href="#">September</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="category">
-                                                            <h6>Category</h6>
-                                                            <ul>
-                                                                <li><a href="#">Pop Music</a></li>
-                                                                <li><a href="#">Rock Music</a></li>
-                                                                <li><a href="#">Hip Hop Music</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="venues">
-                                                            <h6>Venues</h6>
-                                                            <ul>
-                                                                <li><a href="#">Radio City Musical Hall</a></li>
-                                                                <li><a href="#">Madison Square Garden</a></li>
-                                                                <li><a href="#">Royce Hall</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="event-item">
-                                                        <div class="row">
-                                                            <div class="col-lg-4">
-                                                                <div class="left-content">
-                                                                    <h4>Water Splash Festival</h4>
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur do adipiscing eliterirt sed eiusmod alori...</p>
-                                                                    <div class="main-dark-button"><a href="event-details.html">Discover More</a></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="thumb">
-                                                                    <img src="~/web/assets/images/event-page-04.jpg" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="right-content">
-                                                                    <ul>
-                                                                        <li>
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                            <h6>April 24 Friday<br>12:00 AM - 12:00 PM</h6>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="fa fa-map-marker"></i>
-                                                                            <span>Copacabana Beach, Rio de Janeiro</span>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="fa fa-users"></i>
-                                                                            <span>528 Total Guests Attending</span>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="event-item">
-                                                        <div class="row">
-                                                            <div class="col-lg-4">
-                                                                <div class="left-content">
-                                                                    <h4>Sunny Hill Festival</h4>
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur do adipiscing eliterirt sed eiusmod alori...</p>
-                                                                    <div class="main-dark-button"><a href="event-details.html">Discover More</a></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="thumb">
-                                                                    <img src="~/web/assets/images/event-page-03.jpg" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="right-content">
-                                                                    <ul>
-                                                                        <li>
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                            <h6>May 31 Friday<br>10:00 AM - 11:00 PM</h6>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="fa fa-map-marker"></i>
-                                                                            <span>Copacabana Beach, Rio de Janeiro</span>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="fa fa-users"></i>
-                                                                            <span>240 Total Guests Attending</span>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="event-item">
-                                                        <div class="row">
-                                                            <div class="col-lg-4">
-                                                                <div class="left-content">
-                                                                    <h4>New Rock Festival</h4>
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur do adipiscing eliterirt sed eiusmod alori...</p>
-                                                                    <div class="main-dark-button"><a href="event-details.html">Discover More</a></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="thumb">
-                                                                    <img src="~/web/assets/images/event-page-02.jpg" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="right-content">
-                                                                    <ul>
-                                                                        <li>
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                            <h6>June 12 Friday<br>09:00 AM - 09:00 PM</h6>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="fa fa-map-marker"></i>
-                                                                            <span>Copacabana Beach, Rio de Janeiro</span>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="fa fa-users"></i>
-                                                                            <span>360 Total Guests Attending</span>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="event-item">
-                                                        <div class="row">
-                                                            <div class="col-lg-4">
-                                                                <div class="left-content">
-                                                                    <h4>Monkey Dance Festival</h4>
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur do adipiscing eliterirt sed eiusmod alori...</p>
-                                                                    <div class="main-dark-button"><a href="event-details.html">Discover More</a></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="thumb">
-                                                                    <img src="~/web/assets/images/event-page-01.jpg" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <div class="right-content">
-                                                                    <ul>
-                                                                        <li>
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                            <h6>July 14 Friday<br>08:30 AM - 09:30 PM</h6>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="fa fa-map-marker"></i>
-                                                                            <span>Copacabana Beach, Rio de Janeiro</span>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="fa fa-users"></i>
-                                                                            <span>450 Total Guests Attending</span>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="pagination">
-                                                        <ul>
-                                                            <li><a href="#">Önceki</a></li>
-                                                            <li><a href="Active">1</a></li>
-                                                            <li class="#"><a href="#">2</a></li>
-                                                            <li><a href="#">3</a></li>
-                                                            <li><a href="#">Sonraki</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>    
-                            </section>
-                        </div>
+                            </article>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
