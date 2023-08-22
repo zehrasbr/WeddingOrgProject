@@ -1,9 +1,12 @@
-﻿<div class="page-heading-about">
+﻿@using EntityLayer.Concrete
+@model List<OpenPlace>
+
+<div class="page-heading-about">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Radio City Musical Hall</h2>
-                <span>September 24-28, 2021 in Rio de Janeiro</span>
+                <h2>YENİ AÇILAN MEKANIMIZ</h2>
+                <span>Ağustos 29 2023, Çankaya, Ankara</span>
             </div>
         </div>
     </div>
@@ -12,29 +15,32 @@
 <div class="about-item">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+        
+            @foreach (var item in Model)
+            {    
+                <div class="col-lg-8">
                 <div class="left-image">
-                    <img src="~/web/assets/images/about-image.jpg" alt="party time">
+                    <img src="@item.ImageUrl" alt="party time">
                 </div>
             </div>
-            <div class="col-lg-4">
+                <div class="col-lg-4">
                 <div class="right-content">
                     <div class="about-map-image">
-                        <img src="~/web/assets/images/about-map-image.jpg" alt="party location">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3745.139674013377!2d32.8279210272144!3d39.92750394010187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m5!1s0x14d34f20f1e3c1e1%3A0x371e33cacc518318!2zQmFow6dlbGlldmxlciwgw4dhbmtheWEvQW5rYXJh!3m2!1d39.9293005!2d32.8267844!4m3!3m2!1d39.9292915!2d32.826778499999996!5e0!3m2!1str!2str!4v1692694995581!5m2!1str!2str" width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="down-content">
-                        <h4>Radio City Musical Hall</h4>
+                        <h4>@item.Title</h4>
                         <ul>
-                            <li>August 24 Friday</li>
-                            <li>09:30 AM - 07:00 PM</li>
+                            <li>@item.Description</li>
+                                <li>@item.DateTime 09:00 - 23:00</li>
                         </ul>
-                        <span><i class="fa fa-ticket"></i> Tickets Starting From $34.00</span>
                         <div class="main-dark-button">
-                            <a href="ticket-details.html">Purchase Tickets</a>
                         </div>
                     </div>
                 </div>
             </div>
+            }
+            
         </div>
     </div>
 </div>

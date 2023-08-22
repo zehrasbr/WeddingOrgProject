@@ -21,5 +21,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Place> Places { get; set; }
         public DbSet<Rezervation> Rezervations { get; set; }
         public DbSet<RezervePlace> RezervePlaces { get; set; }
+        public DbSet<OpenPlace> OpenPlaces { get; set; }
     }
 }
