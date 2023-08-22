@@ -10,7 +10,7 @@ namespace WeddingOrganization.PresantationLayer.ViewComponents
         public IViewComponentResult Invoke()
 		{
             var values = placeManager.TGetList();
-            return View();
+            return View(values);
 		}
 	}
 }

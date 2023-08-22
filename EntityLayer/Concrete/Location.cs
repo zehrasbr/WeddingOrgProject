@@ -12,6 +12,7 @@ namespace EntityLayer.Concrete
         [Key]
         public int LocationID { get; set; }
         public string Title { get; set; }
+        public string ImageUrl { get; set; }
         public DateTime DateTime { get; set; }
         public string Address { get; set; }
     }

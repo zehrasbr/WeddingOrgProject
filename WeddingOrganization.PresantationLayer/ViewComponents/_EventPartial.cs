@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WeddingOrganization.PresantationLayer.ViewComponents
 {
 	public class _EventPartial : ViewComponent
 	{
-		public IViewComponentResult Invoke()
+        LocationManager locationManager = new LocationManager(new EfLocationDal());
+        public IViewComponentResult Invoke()
 		{
-			return View();
+            var values = locationManager.TGetList();
+            return View(values);
 		}
 	}
 }

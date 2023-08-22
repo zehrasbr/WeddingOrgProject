@@ -1,86 +1,41 @@
-﻿<div class="venue-tickets">
+﻿@using EntityLayer.Concrete
+@model List<Place>
+<div class="venue-tickets">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Our Venues & Tickets</h2>
+                    <h2>MEKANLARIMIZ</h2>
                 </div>
             </div>
-            <div class="col-lg-4">
+            @foreach (var item in Model)
+            {
+               <div class="col-lg-4">
                 <div class="venue-item">
                     <div class="thumb">
-                        <img src="~/web/assets/images/venue-01.jpg" alt="">
+                        <img src="@item.ImageUrl" alt="">
                     </div>
                     <div class="down-content">
                         <div class="left-content">
                             <div class="main-white-button">
-                                <a href="ticket-details.html">Purchase Tickets</a>
+                                <a href="ticket-details.html">Mekan Detayları</a>
                             </div>
                         </div>
                         <div class="right-content">
-                            <h4>Radio City Musical Hall</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.</p>
+                            <h4>@item.Title</h4>
+                            <p>@item.Description</p>
                             <ul>
                                 <li><i class="fa fa-sitemap"></i>250</li>
-                                <li><i class="fa fa-user"></i>500</li>
+                                <li><i class="fa fa-user"></i>@item.Capacity</li>
                             </ul>
                             <div class="price">
-                                <span>1 ticket<br>from <em>$45</em></span>
+                                <span>Mekan Fiyatı<br><em>@item.Price ₺</em></span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="venue-item">
-                    <div class="thumb">
-                        <img src="~/web/assets/images/venue-02.jpg" alt="">
-                    </div>
-                    <div class="down-content">
-                        <div class="left-content">
-                            <div class="main-white-button">
-                                <a href="ticket-details.html">Purchase Tickets</a>
-                            </div>
-                        </div>
-                        <div class="right-content">
-                            <h4>Madison Square Garden</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.</p>
-                            <ul>
-                                <li><i class="fa fa-sitemap"></i>450</li>
-                                <li><i class="fa fa-user"></i>650</li>
-                            </ul>
-                            <div class="price">
-                                <span>1 ticket<br>from <em>$55</em></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="venue-item">
-                    <div class="thumb">
-                        <img src="~/web/assets/images/venue-03.jpg" alt="">
-                    </div>
-                    <div class="down-content">
-                        <div class="left-content">
-                            <div class="main-white-button">
-                                <a href="ticket-details.html">Purchase Tickets</a>
-                            </div>
-                        </div>
-                        <div class="right-content">
-                            <h4>Royce Hall</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.</p>
-                            <ul>
-                                <li><i class="fa fa-sitemap"></i>450</li>
-                                <li><i class="fa fa-user"></i>750</li>
-                            </ul>
-                            <div class="price">
-                                <span>1 ticket<br>from <em>$65</em></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> 
+            }
         </div>
     </div>
 </div>
