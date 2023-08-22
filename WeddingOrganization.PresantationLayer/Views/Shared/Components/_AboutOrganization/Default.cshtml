@@ -1,31 +1,28 @@
-﻿<div class="about-upcoming-shows">
+﻿@using EntityLayer.Concrete
+@model List<About>
+<div class="about-upcoming-shows">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9">
-                <h2>About The Upcoming Show</h2>
+            @foreach(var item in Model)
+            {
+                <div class="col-lg-9">
+                <h2>@item.Title1</h2>
                 <p><p>
-                    ArtXibition Event Template is brought to you by Tooplate website and it included total 7 HTML pages.
-                    These are <a href="index.html">Homepage</a>, <a href="about.html">About</a>,
-                    <a href="rent-venue.html">Rent a venue</a>, <a href="shows-events.html">shows &amp; events</a>,
-                    <a href="event-details.html">event details</a>, <a href="tickets.html">tickets</a>, and <a href="ticket-details.html">ticket details</a>.
-                    You can feel free to modify any page as you like. If you have any question, please visit our <a href="https://www.tooplate.com/contact" target="_blank">Contact page</a>.
+                    @item.Description1
                 </p></p>
-                <h4>Items That Are Restricted</h4>
+                <h4>@item.Title2</h4>
                 <ul>
-                    <li>* Flash Cameras</li>
-                    <li>* Food & Drinks</li>
-                    <li>* Any kind of flashy objects</li>
+                    <li>* @item.Description2</li>
                 </ul>
-                <h4>Directions & Car Parking</h4>
+                <h4>@item.Title3</h4>
                 <p>
-                    Art party vegan mixtape before they sold out raclette, cliche banh mi mumblecore ugh hell of. Art party kene
-                    ugh umami, readymade tbh small batch austin distillery aesthetic.Shoreditch narwhal livers edge actually godar
-                    affogato sartorial waistcoat ugh raw denim stumptown.
+                    @item.Description3
                 </p>
                 <div class="text-button">
-                    <a href="event-details.html">Need Directions? <i class="fa fa-arrow-right"></i></a>
                 </div>
             </div>
+            }
+            
             <div class="col-lg-3">
                 <div class="next-shows">
                     <h4><i class="fa fa-clock-o"></i> Get The Next Show Tickets</h4>

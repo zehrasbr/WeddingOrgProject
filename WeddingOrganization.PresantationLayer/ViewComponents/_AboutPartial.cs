@@ -8,11 +8,10 @@ namespace WeddingOrganization.PresantationLayer.ViewComponents
 {
 	public class _AboutPartial : ViewComponent
 	{
-        AboutManager aboutManager = new AboutManager(new EfAboutDal());
+
         public IViewComponentResult Invoke()
 		{
-            var values = aboutManager.TGetList();
-            return View(values);
+            return View();
 		}
 	}
 }

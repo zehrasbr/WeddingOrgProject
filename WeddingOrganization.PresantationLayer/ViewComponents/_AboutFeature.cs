@@ -4,13 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WeddingOrganization.PresantationLayer.ViewComponents
 {
-    public class _AboutOrganization : ViewComponent
+    public class _AboutFeature : ViewComponent
     {
-        AboutManager aboutManager = new AboutManager(new EfAboutDal());
         public IViewComponentResult Invoke()
         {
-            var values = aboutManager.TGetList();
-            return View(values);
+            return View();
         }
     }
 }
