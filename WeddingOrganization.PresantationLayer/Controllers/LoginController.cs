@@ -4,14 +4,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WeddingOrganization.PresantationLayer.Models;
 
-namespace WeddingOrganization.PresantationLayer.Controllers
-{    
+namespace SocialMedia.WebUI.Controllers
+{
     [AllowAnonymous]
     public class LoginController : Controller
     {
-
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+
         public LoginController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
@@ -19,23 +19,53 @@ namespace WeddingOrganization.PresantationLayer.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult SignUp()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Index(UserSignInViewModel p)
+        public async Task<IActionResult> SignUp(UserRegisterViewModel p)
         {
-            if (ModelState.IsValid)
+            AppUser appUser = new AppUser()
             {
-                var result = await _signInManager.PasswordSignInAsync(p.UserName, p.Passoword, false, true);
-                if(result.Succeeded)
+                UserName = p.UserName,
+                Email = p.Email,
+            };
+            if (p.Password == p.ConfirmPassword)
+            {
+                var result = await _userManager.CreateAsync(appUser, p.Password);
+                if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("SignIn");
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Login");
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
+            }
+            return View(p);
+        }
+        [HttpGet]
+        public IActionResult SignIn()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> SignIn(UserSignInViewModel p)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(p.UserName, p.Password, false, true);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Default");
+                }
+                else
+                {
+                    return RedirectToAction("SignIn", "Login");
                 }
             }
             return View();
