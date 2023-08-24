@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concrete
+@model List<Comment>
+<div class="also-like">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Müşteri Yorumları</h2>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4">
+                    <div class="like-item">
+                        <div class="thumb">
+                            <div class="icons">
+                            </div>
+                        </div>
+                        <div class="down-content">
+                            <h4>@item.NameSurname</h4>
+                            <br>
+                            <span>@item.Description</span>        
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

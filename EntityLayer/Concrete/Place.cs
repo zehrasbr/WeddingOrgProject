@@ -17,5 +17,6 @@ namespace EntityLayer.Concrete
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public bool Status { get; set; }
+        public List<Comment> Comments { get; set; }
     }
 }
