@@ -6,10 +6,10 @@ namespace WeddingOrganization.PresantationLayer.ViewComponents
 {
     public class _CommentList : ViewComponent
     {
-        CommentListManager commentManager = new CommentListManager(new EfCommentListDal());
+        CommentListManager commentListManager = new CommentListManager(new EfCommentListDal());
         public IViewComponentResult Invoke()
         {
-            var values = commentManager.TGetList();
+            var values = commentListManager.TGetList();
             return View(values);
         }
     }
