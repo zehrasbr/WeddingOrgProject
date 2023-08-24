@@ -26,27 +26,42 @@ namespace SocialMedia.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> SignUp(UserRegisterViewModel p)
         {
-            AppUser appUser = new AppUser()
+            //AppUser appUser = new AppUser()
+            //{
+            //    UserName = p.UserName,
+            //    Email = p.Email,
+            //};
+            //if (p.Password == p.ConfirmPassword)
+            //{
+            //    var result = await _userManager.CreateAsync(appUser, p.Password);
+               
+            //    if (result.Succeeded)
+            //    {
+            //        return RedirectToAction("SignIn");
+            //    }
+            //    else
+            //    {
+            //        foreach (var item in result.Errors)
+            //        {
+            //            ModelState.AddModelError("", item.Description);
+            //        }
+            //    }
+            //}
+            if(ModelState.IsValid)
             {
-                UserName = p.UserName,
-                Email = p.Email,
-            };
-            if (p.Password == p.ConfirmPassword)
-            {
+                AppUser appUser = new AppUser()
+                {
+                    UserName = p.UserName,
+                    Email = p.Email,
+                    Password = p.Password,
+                };
                 var result = await _userManager.CreateAsync(appUser, p.Password);
-                if (result.Succeeded)
+                if(result.Succeeded)
                 {
-                    return RedirectToAction("SignIn");
-                }
-                else
-                {
-                    foreach (var item in result.Errors)
-                    {
-                        ModelState.AddModelError("", item.Description);
-                    }
+                    return RedirectToAction("SignIn", "Login");
                 }
             }
-            return View(p);
+            return View();
         }
         [HttpGet]
         public IActionResult SignIn()

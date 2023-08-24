@@ -4,7 +4,7 @@ namespace WeddingOrganization.PresantationLayer.Models
 {
     public class UserRegisterViewModel
     {
-        [Required(ErrorMessage = "Lütfen kullanıcı adınızı giriniz")]
+        //[Required(ErrorMessage = "Lütfen kullanıcı adınızı giriniz")]
         public string UserName { get; set; }
         [Required(ErrorMessage = "Lütfen email adresinizi giriniz")]
         public string Email { get; set; }
