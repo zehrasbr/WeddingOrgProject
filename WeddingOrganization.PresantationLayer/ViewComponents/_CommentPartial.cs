@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using DataAccessLayer.Migrations;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WeddingOrganization.PresantationLayer.ViewComponents

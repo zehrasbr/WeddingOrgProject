@@ -27,6 +27,7 @@ namespace DataAccessLayer.Repository
         {
             using var context = new Context();
             context.Add(t);
+            context.SaveChanges();
         }
 
         public void Update(T t)
