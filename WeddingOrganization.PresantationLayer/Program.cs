@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
-using SocialMedia.WebUI.Models;
+using WeddingOrganization.PresantationLayer.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

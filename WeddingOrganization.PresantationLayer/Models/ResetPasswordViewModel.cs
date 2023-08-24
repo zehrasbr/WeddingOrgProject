@@ -1,4 +1,4 @@
-﻿namespace SocialMedia.WebUI.Models
+﻿namespace WeddingOrganization.PresantationLayer.Models
 {
     public class ResetPasswordViewModel
     {

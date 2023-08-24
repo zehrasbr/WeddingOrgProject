@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace SocialMedia.WebUI.Models
+namespace WeddingOrganization.PresantationLayer.Models
 {
     public class CustomIdentityValidator : IdentityErrorDescriber
     {

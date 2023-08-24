@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using MailKit.Net.Smtp;
-using SocialMedia.WebUI.Models;
 using System.Net.Mail;
 using SmtpClient = MailKit.Net.Smtp.SmtpClient;
 using Microsoft.AspNetCore.Authorization;
 using EntityLayer.Concrete;
+using WeddingOrganization.PresantationLayer.Models;
 
 namespace SocialMedia.WebUI.Controllers
 {
