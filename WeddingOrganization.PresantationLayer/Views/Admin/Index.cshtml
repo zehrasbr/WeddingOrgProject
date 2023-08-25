@@ -1,14 +1,35 @@
-﻿
+﻿@model List<EntityLayer.Concrete.About>
 @{
-    ViewBag.Title = "Index";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Resim Ekleme Sayfası </h1>
+<h1>Hakkımda Ekle</h1>
 
-<form method="post" enctype="multipart/form-data">
-    <label>Görseli Seçiniz</label>
-    @* <input type="file" class="form-control border" asp-for="Image" /> *@
-    <br>
-    <button class="btn btn-primary">Görsel Ekle</button>
-</form>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık 1</th>
+        <th>Açılama 1</th>
+        <th>Başlık 2</th>
+        <th>Açıklama 2</th>
+        <th>Başlık 3</th>
+        <th>Açıklama 3</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title1</td>
+            <td>@item.Description1</td>
+            <td>@item.Title2</td>
+            <td>@item.Description2</td>
+            <td>@item.Title3</td>
+            <td>@item.Description3</td>
+            <td><a href="/Admin/DeleteAbout/@item.AboutID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Admin/UpdateAbout/@item.AboutID" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/AddAbout/" class="btn btn-outline-primary">Güncel Hakkımda Girişi</a>

@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "AddAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Hakkımda Ekleme Sayfası</h1>
+
+
+<form method="post">
+
+    <label>Başlık 1</label>
+    <input asp-for="Title1" class="form-control" style="background-color:#b1b3b1" />
+    <br />
+    <label>Açıklama 1</label>
+    <input asp-for="Description2" class="form-control" style="background-color:#b1b3b1" />
+    <br />
+    <label>Başlık 2</label>
+    <input asp-for="Title2" class="form-control" style="background-color:#b1b3b1" />
+    <br />
+    <label>Açıklama 2</label>
+    <input asp-for="Description2" class="form-control" style="background-color:#b1b3b1" />
+    <br />
+    <label>Başlık 3</label>
+    <input asp-for="Title3" class="form-control" style="background-color:#b1b3b1" />
+    <br />
+    <label>Açıklama 3</label>
+    <input asp-for="Description3" class="form-control" style="background-color:#b1b3b1" />
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
