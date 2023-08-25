@@ -1,4 +1,4 @@
-﻿@model List<EntityLayer.Concrete.About>
+﻿@* @model List<EntityLayer.Concrete.About>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -20,7 +20,7 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
+         <tr>
             <td>@item.Title1</td>
             <td>@item.Description1</td>
             <td>@item.Title2</td>
@@ -29,7 +29,7 @@
             <td>@item.Description3</td>
             <td><a href="/Admin/DeleteAbout/@item.AboutID" class="btn btn-outline-danger">Sil</a></td>
             <td><a href="/Admin/UpdateAbout/@item.AboutID" class="btn btn-outline-success">Güncelle</a></td>
-        </tr>
+        </tr> 
     }
 </table>
-<a href="/Admin/AddAbout/" class="btn btn-outline-primary">Güncel Hakkımda Girişi</a>
+<a href="/Admin/AddAbout/" class="btn btn-outline-primary">Güncel Hakkımda Girişi</a> *@
