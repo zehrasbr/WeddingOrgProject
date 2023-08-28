@@ -34,7 +34,7 @@ namespace SocialMedia.WebUI.Controllers
             //if (p.Password == p.ConfirmPassword)
             //{
             //    var result = await _userManager.CreateAsync(appUser, p.Password);
-               
+
             //    if (result.Succeeded)
             //    {
             //        return RedirectToAction("SignIn");
@@ -47,7 +47,7 @@ namespace SocialMedia.WebUI.Controllers
             //        }
             //    }
             //}
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 AppUser appUser = new AppUser()
                 {
@@ -56,7 +56,7 @@ namespace SocialMedia.WebUI.Controllers
                     Password = p.Password,
                 };
                 var result = await _userManager.CreateAsync(appUser, p.Password);
-                if(result.Succeeded)
+                if (result.Succeeded)
                 {
                     return RedirectToAction("SignIn", "Login");
                 }

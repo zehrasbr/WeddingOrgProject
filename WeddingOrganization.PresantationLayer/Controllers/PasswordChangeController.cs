@@ -29,19 +29,19 @@ namespace SocialMedia.WebUI.Controllers
         {
             var user = await _userManager.FindByEmailAsync(forgetPasswordViewModel.Mail);
             string passwordResetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var passwordResetTokenLink = Url.Action("ResetPassword","PasswordChange",new
+            var passwordResetTokenLink = Url.Action("ResetPassword", "PasswordChange", new
             {
                 userId = user.Id,
                 token = passwordResetToken
-            },HttpContext.Request.Scheme);
+            }, HttpContext.Request.Scheme);
 
             MimeMessage mimeMessage = new MimeMessage();
 
-            MailboxAddress mailboxAddressFrom = new MailboxAddress("","zehraisbr@gmail.com");
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("", "zehraisbr@gmail.com");
 
             mimeMessage.From.Add(mailboxAddressFrom);
 
-            MailboxAddress mailboxAddressToo = new MailboxAddress("",forgetPasswordViewModel.Mail);
+            MailboxAddress mailboxAddressToo = new MailboxAddress("", forgetPasswordViewModel.Mail);
             mimeMessage.To.Add(mailboxAddressToo);
 
             var bodyBuilder = new BodyBuilder();
@@ -70,13 +70,13 @@ namespace SocialMedia.WebUI.Controllers
         {
             var userid = TempData["userid"];
             var token = TempData["token"];
-            if(userid == null || token==null)
+            if (userid == null || token == null)
             {
-                
+
             }
             var user = await _userManager.FindByIdAsync(userid.ToString());
-            var result = await _userManager.ResetPasswordAsync(user,token.ToString(),resetPasswordViewModel.Password);
-            if(result.Succeeded)
+            var result = await _userManager.ResetPasswordAsync(user, token.ToString(), resetPasswordViewModel.Password);
+            if (result.Succeeded)
             {
                 return RedirectToAction("SignIn", "Login");
             }
