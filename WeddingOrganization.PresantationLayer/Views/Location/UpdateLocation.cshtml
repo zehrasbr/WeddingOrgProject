@@ -1,10 +1,10 @@
 ﻿@model EntityLayer.Concrete.Location
 @{
-    ViewData["Title"] = "AddLocation";
+    ViewData["Title"] = "UpdateLocation";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>After Party Mekan Ekleme Sayfası</h1>
+<h1>After Party Mekan Güncelleme Sayfası</h1>
 
 <form method="post">
     <label>Mekan Adı</label>
@@ -19,5 +19,5 @@
     <label>Mekan Fotoğrafı</label>
     <input type="file" class="form-control border" asp-for="ImageUrl" />
     <br />
-    <button class="btn btn-dark">After Party Mekan Ekle</button>
+    <button class="btn btn-dark">After Party Güncelle</button>
 </form>
